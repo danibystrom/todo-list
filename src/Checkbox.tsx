@@ -1,15 +1,14 @@
 import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 
-function Checkbox({ defaultChecked = false }) {
-  const [checked, setChecked] = useState(defaultChecked);
+interface CheckboxProps {
+  checked: boolean;
+  onClick: () => void;
+}
 
+function Checkbox({ checked, onClick }: CheckboxProps) {
   return (
-    <div
-      className="inline-block align-middle"
-      onClick={() => setChecked(!checked)}
-    >
+    <div className="inline-block align-middle" onClick={onClick}>
       {checked ? (
         <div className="checkbox checked">
           <FontAwesomeIcon

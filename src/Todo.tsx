@@ -14,14 +14,9 @@ function Todo({ todo }: TodoProps) {
   };
 
   return (
-    <div
-      className={`flex items-center todo ${done ? "done" : ""}`}
-      onClick={handleClick}
-    >
-      <div className="">
-        <Checkbox defaultChecked={false} />
-        <span className="ml-2">{todo}</span>
-      </div>
+    <div className={`flex items-center todo ${done ? "done" : ""}`}>
+      <Checkbox checked={done} onClick={() => setDone(!done)} />
+      <span className="ml-2">{todo}</span>
     </div>
   );
 }
