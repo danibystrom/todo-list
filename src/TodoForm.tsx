@@ -15,17 +15,17 @@ function TodoForm({ addTodo }: TodoFormProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="form-container w-full mb-10">
+      <div className="form-container w-full mb-10 border p-2 rounded-xl">
         <form className="flex" onSubmit={handleSubmit}>
-          <button type="submit" className="mr-2 border rounded-lg px-4">
+          <button type="submit" className="mr-2 border rounded-2xl px-4">
             +
           </button>
           <input
             type="text"
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
-            placeholder="What to do..."
-            className="border border-gray-300 rounded-lg bg-slate-500 text-white p-2 w-full"
+            placeholder="All the booring stuff here..."
+            className="bg-transparent rounded-lg  text-white p-2 w-full"
           />
         </form>
       </div>

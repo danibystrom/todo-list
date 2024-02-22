@@ -1,18 +1,25 @@
-import { CheckIcon, StopIcon } from "@heroicons/react/16/solid";
+import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 function Checkbox({ defaultChecked = false }) {
   const [checked, setChecked] = useState(defaultChecked);
 
   return (
-    <div onClick={() => setChecked(!checked)}>
+    <div
+      className="inline-block align-middle"
+      onClick={() => setChecked(!checked)}
+    >
       {checked ? (
         <div className="checkbox checked">
-          <CheckIcon className="h-5 w-5" />
+          <FontAwesomeIcon
+            icon={faCheckCircle}
+            className="h-5 w-5 text-green-400"
+          />
         </div>
       ) : (
         <div className="checkbox-unchecked">
-          <StopIcon className="h-6 w-6" />
+          <FontAwesomeIcon icon={faCircle} className="h-5 w-5" />
         </div>
       )}
     </div>
