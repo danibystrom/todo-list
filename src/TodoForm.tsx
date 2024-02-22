@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./TodoForm.css";
 
 interface TodoFormProps {
   addTodo: (todo: string) => void;
@@ -17,7 +18,10 @@ function TodoForm({ addTodo }: TodoFormProps) {
     <div className="flex justify-center">
       <div className="form-container w-full mb-10 border p-2 rounded-xl">
         <form className="flex" onSubmit={handleSubmit}>
-          <button type="submit" className="mr-2 border rounded-2xl px-4">
+          <button
+            type="submit"
+            className="mr-2 rounded-2xl px-4 text-slate-950 bg-white border-slate-50"
+          >
             +
           </button>
           <input
@@ -25,7 +29,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
             placeholder="All the booring stuff here..."
-            className="bg-transparent rounded-lg  text-white p-2 w-full"
+            className="bg-transparent rounded-lg outline-none text-white p-2 w-full"
           />
         </form>
       </div>
