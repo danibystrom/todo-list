@@ -1,5 +1,6 @@
 import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Todo.css";
 
 interface CheckboxProps {
   checked: boolean;
@@ -10,15 +11,12 @@ function Checkbox({ checked, onClick }: CheckboxProps) {
   return (
     <div className="flex items-center pr-1" onClick={onClick}>
       {checked ? (
-        <div className="checkbox checked">
-          <FontAwesomeIcon
-            icon={faCheckCircle}
-            className="h-5 w-5 text-green-400"
-          />
+        <div className="checkbox-checked">
+          <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4" />
         </div>
       ) : (
         <div className="checkbox-unchecked">
-          <FontAwesomeIcon icon={faCircle} className="h-5 w-5" />
+          <FontAwesomeIcon icon={faCircle} className="h-4 w-4" />
         </div>
       )}
     </div>

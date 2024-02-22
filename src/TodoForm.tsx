@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Todo.css";
 import "./TodoForm.css";
 
 interface TodoFormProps {
@@ -29,7 +30,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
             placeholder="All the booring stuff here..."
-            className="bg-transparent rounded-lg outline-none text-white p-2 w-full"
+            className="bg-transparent rounded-xl outline-none text-white p-2 w-full"
           />
         </form>
       </div>

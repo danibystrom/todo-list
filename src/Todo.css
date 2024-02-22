@@ -4,10 +4,6 @@
   padding: 6px;
   margin: 8px;
   border-radius: 10px;
-  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
-    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
-    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
-    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
 }
 
 .todo.done {
@@ -15,4 +11,21 @@
   text-decoration: line-through;
   padding: 6px;
   border-radius: 10px;
+}
+
+.delete-btn {
+  background-color: #17181f;
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.todo .fa-icon {
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
 }

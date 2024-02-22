@@ -10,7 +10,7 @@ function DeleteButton({ onDelete }: DeleteButtonProps) {
   return (
     <button
       onClick={handleClick}
-      className="ml-auto text-white text-xs pr-3 font-bold"
+      className="delete-btn ml-auto text-white text-xs pr-3 font-semibold"
     >
       delete
     </button>
