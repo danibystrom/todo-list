@@ -12,6 +12,12 @@ function App() {
     setTodos([...todos, todo]);
   };
 
+  const deleteTodo = (index: number) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <Header />
@@ -19,7 +25,7 @@ function App() {
         <div className="todos-container">
           <TodoForm addTodo={addTodo} />
           {todos.map((todo, index) => (
-            <Todo key={index} todo={todo} />
+            <Todo key={index} todo={todo} onDelete={() => deleteTodo(index)} />
           ))}
         </div>
       </div>

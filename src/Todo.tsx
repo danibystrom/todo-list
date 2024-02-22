@@ -4,19 +4,23 @@ import "./Todo.css";
 
 interface TodoProps {
   todo: string;
+  onDelete: () => void;
 }
 
-function Todo({ todo }: TodoProps) {
+function Todo({ todo, onDelete }: TodoProps) {
   const [done, setDone] = useState(false);
 
-  const handleClick = () => {
-    setDone(!done);
+  const handleDelete = () => {
+    onDelete();
   };
 
   return (
     <div className={`flex items-center todo ${done ? "done" : ""}`}>
       <Checkbox checked={done} onClick={() => setDone(!done)} />
       <span className="ml-2">{todo}</span>
+      <button onClick={handleDelete} className="ml-2 text-red-600">
+        Delete
+      </button>
     </div>
   );
 }
