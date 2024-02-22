@@ -8,7 +8,7 @@ interface CheckboxProps {
 
 function Checkbox({ checked, onClick }: CheckboxProps) {
   return (
-    <div className="inline-block align-middle" onClick={onClick}>
+    <div className="flex items-center pr-1" onClick={onClick}>
       {checked ? (
         <div className="checkbox checked">
           <FontAwesomeIcon
