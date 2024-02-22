@@ -1,0 +1,9 @@
+.todo {
+  transition: background-color 0.3s ease, opacity 0.3s ease,
+    text-decoration 0.3s ease;
+}
+
+.todo.done {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: line-through;
+}
