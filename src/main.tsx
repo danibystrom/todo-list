@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import App from "./App";
+import App from "./AppLayout";
 import ArchivedTodos from "./ArchivedTodos";
 
 const router = createBrowserRouter(

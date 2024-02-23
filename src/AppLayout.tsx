@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import "./App.css";
+import "./AppLayout.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Todo from "./Todo";
