@@ -7,7 +7,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import App from "./App";
-import ArchivedTodos from "./components/ArchivedTodos";
+import ArchivedTodos from "./ArchivedTodos";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

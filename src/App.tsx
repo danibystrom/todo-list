@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Todo from "./components/Todo";
-import TodoForm from "./components/TodoForm";
+import Footer from "./Footer";
+import Header from "./Header";
+import Todo from "./Todo";
+import TodoForm from "./TodoForm";
 
 function App() {
   const [todos, setTodos] = useState<string[]>([]);
