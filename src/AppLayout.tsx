@@ -1,13 +1,17 @@
+import { Outlet } from "react-router-dom"; // Importera Outlet
 import "./AppLayout.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import HomePage from "./HomePage";
 
 function AppLayout() {
   return (
     <>
       <Header />
-      <HomePage />
+      <div className="app-container">
+        <div className="todos-container">
+          <Outlet />
+        </div>
+      </div>
       <Footer />
     </>
   );

@@ -1,26 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
-import App from "./AppLayout";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import AppLayout from "./AppLayout";
 import ArchivedTodos from "./ArchivedTodos";
 import HomePage from "./HomePage";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" Component={App}>
-      <Route index Component={HomePage} />
-      <Route path="archived" Component={ArchivedTodos} />
-    </Route>
-  )
-);
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="archived" element={<ArchivedTodos />} />
+        </Route>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );

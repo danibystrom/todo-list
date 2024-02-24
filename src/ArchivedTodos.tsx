@@ -1,8 +1,8 @@
 function ArchivedTodos() {
   return (
-    <div>
-      <h1>Archived Todos</h1>
-    </div>
+    <>
+      <h1>HEJ</h1>
+    </>
   );
 }
 
