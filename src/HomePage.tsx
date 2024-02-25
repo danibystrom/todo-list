@@ -27,7 +27,7 @@ function HomePage() {
       ))}
       <Link to="/archived">
         <button className="mr-2 rounded-2xl px-4 py-1 mt-5 text-slate-950 bg-white border-slate-50 ">
-          Arkiverade
+          archived tasks
         </button>
       </Link>
     </div>
