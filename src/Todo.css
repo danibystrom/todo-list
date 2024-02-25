@@ -8,11 +8,13 @@
 
 .todo.done {
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 6px;
-  border-radius: 10px;
 }
 
-.span.todo {
+.todo-text {
+  text-decoration: none;
+}
+
+.todo.done .todo-text {
   text-decoration: line-through;
 }
 

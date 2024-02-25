@@ -14,7 +14,7 @@ function Todo({ todo, onDelete }: TodoProps) {
   return (
     <div className={`flex items-center todo ${done ? "done" : ""}`}>
       <Checkbox checked={done} onClick={() => setDone(!done)} />
-      <span className="ml-2">{todo}</span>
+      <span className="ml-2 todo-text">{todo}</span>
       <DeleteButton onDelete={onDelete} />
     </div>
   );
