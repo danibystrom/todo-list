@@ -1,6 +1,7 @@
+// ArchivedTodosPage.tsx
 import { Link, useOutletContext } from "react-router-dom";
 import { TodoContext } from "../AppLayout";
-import Todo from "../components/Todo";
+import TodoComponent from "../components/Todo";
 import "../styles/AppLayout.css";
 
 function ArchivedTodos() {
@@ -12,9 +13,9 @@ function ArchivedTodos() {
       {todos
         .filter((todo) => todo.isArchived)
         .map((todo, index) => (
-          <Todo
+          <TodoComponent
             key={index}
-            todo={todo.text}
+            todo={todo}
             onDelete={() => deleteTodo(todo.id)}
           />
         ))}

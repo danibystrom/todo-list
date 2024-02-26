@@ -1,14 +1,15 @@
+// AppLayout.tsx
 import { useState } from "react";
-import { Outlet } from "react-router-dom"; // Importera Outlet
+import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import "./styles/AppLayout.css";
 import { Todo } from "./todos";
 
 export interface TodoContext {
   todos: Todo[];
   addTodo: (text: string) => void;
   deleteTodo: (id: string) => void;
+  archiveTodo: (id: string) => void; // Lägg till funktion för att arkivera todos
 }
 
 function AppLayout() {
@@ -31,14 +32,19 @@ function AppLayout() {
     setTodos(newTodos);
   };
 
+  const archiveTodo = (id: string) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isArchived: true } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
   return (
     <>
       <Header />
       <div className="app-container">
         <div className="todos-container">
-          <Outlet
-            context={{ todos, addTodo, deleteTodo } satisfies TodoContext}
-          />
+          <Outlet context={{ todos, addTodo, deleteTodo, archiveTodo }} />
         </div>
       </div>
       <Footer />

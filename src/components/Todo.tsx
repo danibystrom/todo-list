@@ -1,17 +1,19 @@
+// TodoComponent.tsx
 import { useState } from "react";
 import "../styles/Todo.css";
+import { Todo } from "../todos"; // Importera Todo från rätt plats
 import Checkbox from "./Checkbox";
 import DeleteButton from "./DeleteButton";
 
 interface TodoProps {
-  todo: string;
+  todo: Todo;
   onDelete: () => void;
 }
 
-function Todo({ todo, onDelete }: TodoProps) {
-  const [done, setDone] = useState(false);
+function TodoComponent({ todo, onDelete }: TodoProps) {
+  const [done, setDone] = useState(todo.isDone);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(todo);
+  const [editedText, setEditedText] = useState(todo.text);
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -25,11 +27,15 @@ function Todo({ todo, onDelete }: TodoProps) {
 
   const handleCancel = () => {
     setIsEditing(false);
-    setEditedText(todo); // Återställer till originaltexten om användaren avbryter
+    setEditedText(todo.text); // Återställer till originaltexten om användaren avbryter
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEditedText(e.target.value);
+  };
+
+  const handleDelete = () => {
+    onDelete();
   };
 
   return (
@@ -49,13 +55,13 @@ function Todo({ todo, onDelete }: TodoProps) {
       ) : (
         <>
           <span className="ml-2 todo-text" onClick={handleEdit}>
-            {todo}
+            {todo.text}
           </span>
-          <DeleteButton onDelete={onDelete} />
+          <DeleteButton onDelete={handleDelete} />
         </>
       )}
     </div>
   );
 }
 
-export default Todo;
+export default TodoComponent;
