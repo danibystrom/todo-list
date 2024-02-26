@@ -11,11 +11,30 @@
 }
 
 .todo-text {
-  text-decoration: none;
+  cursor: pointer; /* Gör texten klickbar för att starta edit mode */
 }
 
-.todo.done .todo-text {
-  text-decoration: line-through;
+.todo-text:hover {
+  text-decoration: underline;
+}
+
+.todo-edit {
+  display: flex;
+  align-items: center;
+}
+
+.todo-edit input {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.todo-edit button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .delete-btn {
