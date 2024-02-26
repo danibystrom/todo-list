@@ -1,7 +1,7 @@
 import { useState } from "react";
+import "../styles/Todo.css";
 import Checkbox from "./Checkbox";
 import DeleteButton from "./DeleteButton";
-import "./Todo.css";
 
 interface TodoProps {
   todo: string;

@@ -1,19 +1,24 @@
-import { Link } from "react-router-dom";
-import "styles/AppLayout.css";
+import { Link, useOutletContext } from "react-router-dom";
+import { TodoContext } from "../AppLayout";
+import Todo from "../components/Todo";
+import "../styles/AppLayout.css";
 
-interface ArchivedTodosProps {
-  archivedTodos: string[];
-}
+function ArchivedTodos() {
+  const { todos, deleteTodo } = useOutletContext<TodoContext>();
 
-function ArchivedTodos({ archivedTodos }: ArchivedTodosProps) {
   return (
     <div className="container">
       <h1>Archived Todos</h1>
-      <ul>
-        {archivedTodos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+      {todos
+        .filter((todo) => todo.isArchived)
+        .map((todo, index) => (
+          <Todo
+            key={index}
+            todo={todo.text}
+            onDelete={() => deleteTodo(todo.id)}
+          />
         ))}
-      </ul>
+
       <Link to="/">
         <button className="mr-2 rounded-2xl px-4 py-1 mt-5 text-slate-950 bg-white border-slate-50 ">
           back

@@ -1,6 +1,6 @@
 import { faCheckCircle, faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Todo.css";
+import "../styles/Todo.css";
 
 interface CheckboxProps {
   checked: boolean;

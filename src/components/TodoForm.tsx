@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./Todo.css";
-import "./TodoForm.css";
+import "../styles/Todo.css";
+import "../styles/TodoForm.css";
 
 interface TodoFormProps {
   addTodo: (todo: string) => void;
