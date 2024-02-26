@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./AppLayout.css";
-import Todo from "./Todo";
-import TodoForm from "./TodoForm";
+import "styles/AppLayout.css";
+import Todo from "../components/Todo";
+import TodoForm from "../components/TodoForm";
 
 function HomePage() {
   const [todos, setTodos] = useState<string[]>([]);

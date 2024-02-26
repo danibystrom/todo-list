@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import AppLayout from "./AppLayout";
-import ArchivedTodos from "./ArchivedTodos";
-import HomePage from "./HomePage";
+import ArchivedTodos from "./pages/ArchivedTodosPage";
+import HomePage from "./pages/HomePage";
 
 const archivedTodos: string[] = [];
 
