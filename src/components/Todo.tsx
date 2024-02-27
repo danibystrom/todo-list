@@ -20,8 +20,7 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
   };
 
   const handleSave = () => {
-    // Spara ändringar
-    // Exempel: updateTodoText(editedText);
+    todo.text = editedText;
     setIsEditing(false);
   };
 
