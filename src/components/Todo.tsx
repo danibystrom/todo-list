@@ -8,9 +8,10 @@ import DeleteButton from "./DeleteButton";
 interface TodoProps {
   todo: Todo;
   onDelete: () => void;
+  onArchive: () => void; // Lägg till onArchive
 }
 
-function TodoComponent({ todo, onDelete }: TodoProps) {
+function TodoComponent({ todo, onArchive }: TodoProps) {
   const [done, setDone] = useState(todo.isDone);
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(todo.text);
@@ -34,8 +35,12 @@ function TodoComponent({ todo, onDelete }: TodoProps) {
     setEditedText(e.target.value);
   };
 
-  const handleDelete = () => {
-    onDelete();
+  // const handleDelete = () => {
+  //   onDelete();
+  // };
+
+  const handleArchive = () => {
+    onArchive();
   };
 
   return (
@@ -57,7 +62,8 @@ function TodoComponent({ todo, onDelete }: TodoProps) {
           <span className="ml-2 todo-text" onClick={handleEdit}>
             {todo.text}
           </span>
-          <DeleteButton onDelete={handleDelete} />
+          <DeleteButton onDelete={handleArchive} />
+          {/* <button onClick={handleArchive}>Archive</button> */}
         </>
       )}
     </div>

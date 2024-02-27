@@ -12,7 +12,7 @@ function DeleteButton({ onDelete }: DeleteButtonProps) {
       onClick={handleClick}
       className="delete-btn ml-auto text-white text-xs pr-3 font-semibold"
     >
-      remove
+      archive
     </button>
   );
 }

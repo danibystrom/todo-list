@@ -1,7 +1,7 @@
 // HomePage.tsx
 import { Link, useOutletContext } from "react-router-dom";
 import { TodoContext } from "../AppLayout";
-import Todo from "../components/Todo";
+import TodoComponent from "../components/Todo"; // Uppdatera importen
 import TodoForm from "../components/TodoForm";
 import "../styles/AppLayout.css";
 
@@ -15,11 +15,11 @@ function HomePage() {
       {todos
         .filter((todo) => !todo.isArchived)
         .map((todo, index) => (
-          <Todo
+          <TodoComponent
             key={index}
             todo={todo}
             onDelete={() => deleteTodo(todo.id)}
-            onArchive={() => archiveTodo(todo.id)}
+            onArchive={() => archiveTodo(todo.id)} // Lägg till onArchive
           />
         ))}
 
