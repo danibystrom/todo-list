@@ -43,15 +43,27 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
     <div className={`flex items-center todo ${done ? "done" : ""}`}>
       <Checkbox checked={done} onClick={() => setDone(!done)} />
       {isEditing ? (
-        <div className="ml-2 flex items-center">
+        <div className="ml-2 flex w-full">
           <input
             type="text"
             value={editedText}
             onChange={handleInputChange}
             className="mr-2"
           />
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <div className="flex ml-auto">
+            <button
+              className="save-btn ml-2 text-white text-xs pr-3 font-semibold  hover:bg-[#353847] rounded px-2"
+              onClick={handleSave}
+            >
+              Save
+            </button>
+            <button
+              className="cancel-btn ml-2 text-white text-xs pr-3 font-semibold  hover:bg-[#353847] rounded px-2"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       ) : (
         <>

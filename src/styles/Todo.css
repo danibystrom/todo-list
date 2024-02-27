@@ -23,21 +23,14 @@
   align-items: center;
 }
 
-.todo-edit input {
-  padding: 4px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 8px;
+.todo [type="text"] {
+  background-color: transparent;
+  outline: none;
 }
 
-.todo-edit button {
-  padding: 4px 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.delete-btn {
+.delete-btn,
+.save-btn,
+.cancel-btn {
   background-color: #17181f;
   padding: 5px 10px;
   border-radius: 15px;

@@ -11,7 +11,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Kontrollera om todo är tom
+    // Kontrollerar om todo är tom
     if (todo.trim() !== "") {
       addTodo(todo);
       setTodo("");
@@ -24,7 +24,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
         <form className="flex" onSubmit={handleSubmit}>
           <button
             type="submit"
-            className="mr-2 rounded-2xl px-4 text-slate-950 bg-white border-slate-50"
+            className="input-btn mr-2 h-10 text-slate-950 bg-white border-slate-50 text-xl"
           >
             +
           </button>
@@ -32,7 +32,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
             type="text"
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
-            placeholder="All the boring stuff here..."
+            placeholder="Add stuff here..."
             className="bg-transparent rounded-xl outline-none text-white p-2 w-full"
           />
         </form>
