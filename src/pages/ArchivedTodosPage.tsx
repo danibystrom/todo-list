@@ -17,9 +17,6 @@ function ArchivedTodos() {
             key={index}
             todo={todo}
             onDelete={() => deleteTodo(todo.id)}
-            onArchive={function (): void {
-              throw new Error("Function not implemented.");
-            }}
           />
         ))}
 

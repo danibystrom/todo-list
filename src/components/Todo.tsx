@@ -1,14 +1,13 @@
-// TodoComponent.tsx
 import { useState } from "react";
 import "../styles/Todo.css";
-import { Todo } from "../todos"; // Importera Todo från rätt plats
+import { Todo } from "../todos";
 import Checkbox from "./Checkbox";
 import DeleteButton from "./DeleteButton";
 
 interface TodoProps {
   todo: Todo;
   onDelete: () => void;
-  onArchive: () => void; // Lägg till onArchive
+  onArchive?: () => void; // Gör onArchive valfri
 }
 
 function TodoComponent({ todo, onArchive }: TodoProps) {
@@ -35,12 +34,10 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
     setEditedText(e.target.value);
   };
 
-  // const handleDelete = () => {
-  //   onDelete();
-  // };
-
   const handleArchive = () => {
-    onArchive();
+    if (onArchive) {
+      onArchive();
+    }
   };
 
   return (
@@ -62,8 +59,7 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
           <span className="ml-2 todo-text" onClick={handleEdit}>
             {todo.text}
           </span>
-          <DeleteButton onDelete={handleArchive} />
-          {/* <button onClick={handleArchive}>Archive</button> */}
+          {onArchive && <DeleteButton onDelete={handleArchive} />}
         </>
       )}
     </div>
