@@ -11,8 +11,11 @@ function TodoForm({ addTodo }: TodoFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    addTodo(todo);
-    setTodo("");
+    // Kontrollera om todo är tom
+    if (todo.trim() !== "") {
+      addTodo(todo);
+      setTodo("");
+    }
   };
 
   return (
@@ -29,7 +32,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
             type="text"
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
-            placeholder="All the booring stuff here..."
+            placeholder="All the boring stuff here..."
             className="bg-transparent rounded-xl outline-none text-white p-2 w-full"
           />
         </form>
