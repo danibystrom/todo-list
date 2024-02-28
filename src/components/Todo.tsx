@@ -48,7 +48,7 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
             type="text"
             value={editedText}
             onChange={handleInputChange}
-            className="mr-2"
+            className="mr-2 font-shadows-into-light"
           />
           <div className="flex ml-auto">
             <button
