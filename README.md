@@ -35,6 +35,10 @@ To run this project locally, follow these steps:
 - React Router
 - Tailwind CSS
 
+## Link
+
+https://todotally.vercel.app
+
 ## Credits
 
 This project was created by [Daniela Byström](https://github.com/danibystrom). 💪🏼
