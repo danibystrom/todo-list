@@ -9,7 +9,7 @@ function ArchivedTodos() {
 
   return (
     <div className="container">
-      <h1 className="text-xl p-2">Archived stuff:</h1>
+      <h1 className="text-xl p-2 font-semibold">Stuff I'v archived:</h1>
       {todos
         .filter((todo) => todo.isArchived)
         .map((todo, index) => (
