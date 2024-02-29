@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is a simple Todo List application built using React.js. It allows users to add, delete, and archive tasks. The application consists of two main pages: the homepage, where users can view and manage their active todos, and the archived todos page, where users can view their completed and archived todos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+To run this project locally, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run the following command to install the required dependencies:
 
-- Configure the top-level `parserOptions` property like this:
+![alt text](/src/assets/install.png)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+4. Once the dependencies are installed, you can start the development server by running:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![alt text](/src/assets/start.png)
+
+5. Open your browser and visit `http://localhost:3000` to view the application.
+
+## Features
+
+- Add new todos: Users can add new tasks to their todo list.
+- Edit todos: Users can edit tasks on their todo list and save it as a new one.
+- Archive todos: Users can mark tasks as completed and move them to the archived todos page.
+- View active todos: Users can view and manage their active todos on the homepage.
+- View archived todos: Users can view their completed and archived todos on the archived todos page.
+
+## Technologies Used
+
+- React.js
+- TypeScript
+- React Router
+- Tailwind CSS
+
+## Credits
+
+This project was created by [Daniela Byström](https://github.com/danibystrom). 💪🏼

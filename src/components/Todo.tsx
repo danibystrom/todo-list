@@ -48,7 +48,7 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
             type="text"
             value={editedText}
             onChange={handleInputChange}
-            className="mr-2 font-shadows-into-light"
+            className="mr-2 text-lg"
           />
           <div className="flex ml-auto">
             <button
@@ -67,7 +67,7 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
         </div>
       ) : (
         <>
-          <span className="ml-2 todo-text" onClick={handleEdit}>
+          <span className="ml-2 todo-text text-lg" onClick={handleEdit}>
             {todo.text}
           </span>
           {onArchive && <DeleteButton onDelete={handleArchive} />}

@@ -1,5 +1,4 @@
-// AppLayout.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -9,15 +8,26 @@ export interface TodoContext {
   todos: Todo[];
   addTodo: (text: string) => void;
   deleteTodo: (id: string) => void;
-  archiveTodo: (id: string) => void; // Lägg till funktion för att arkivera todos
+  archiveTodo: (id: string) => void;
 }
 
 function AppLayout() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const addTodo = (text: string) => {
-    setTodos([
-      ...todos,
+    setTodos((prevTodos) => [
+      ...prevTodos,
       {
         id: Math.random().toString(36).substr(2, 9),
         text,
@@ -28,15 +38,15 @@ function AppLayout() {
   };
 
   const deleteTodo = (id: string) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   const archiveTodo = (id: string) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isArchived: true } : todo
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, isArchived: true } : todo
+      )
     );
-    setTodos(updatedTodos);
   };
 
   return (

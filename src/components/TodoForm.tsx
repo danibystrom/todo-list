@@ -33,7 +33,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
             value={todo}
             onChange={(e) => setTodo(e.target.value)}
             placeholder="Add stuff here..."
-            className="font-shadows-into-light bg-transparent rounded-xl outline-none text-white p-2 w-full"
+            className="bg-transparent rounded-xl outline-none text-white text-lg p-2 w-full"
           />
         </form>
       </div>

@@ -13,6 +13,7 @@
 }
 
 .todo-text {
+  font-family: "Shadows Into Light", cursive;
   cursor: pointer; /* Gör texten klickbar för att starta edit mode */
 }
 
@@ -28,6 +29,7 @@
 .todo [type="text"] {
   background-color: transparent;
   outline: none;
+  font-family: "Shadows Into Light", cursive;
 }
 
 .delete-btn,
