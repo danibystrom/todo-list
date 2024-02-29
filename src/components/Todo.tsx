@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/Todo.css";
 import { Todo } from "../todos";
 import Checkbox from "./Checkbox";
 import DeleteButton from "./DeleteButton";
@@ -39,9 +38,13 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
     }
   };
 
+  const toggleDone = () => {
+    setDone(!done);
+  };
+
   return (
     <div className={`flex items-center todo ${done ? "done" : ""}`}>
-      <Checkbox checked={done} onClick={() => setDone(!done)} />
+      <Checkbox checked={done} onClick={toggleDone} />
       {isEditing ? (
         <div className="ml-2 flex w-full">
           <input
@@ -67,7 +70,10 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
         </div>
       ) : (
         <>
-          <span className="ml-2 todo-text text-lg" onClick={handleEdit}>
+          <span
+            className={`ml-2 todo-text text-lg ${done ? "done" : ""}`}
+            onClick={handleEdit}
+          >
             {todo.text}
           </span>
           {onArchive && <DeleteButton onDelete={handleArchive} />}

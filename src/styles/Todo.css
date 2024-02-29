@@ -17,6 +17,11 @@
   cursor: pointer;
 }
 
+.todo-text.done {
+  text-decoration: line-through;
+  color: rgb(15, 15, 15);
+}
+
 .todo-text:hover {
   text-decoration: underline;
 }
