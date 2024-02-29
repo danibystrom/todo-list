@@ -20,7 +20,7 @@ function TodoForm({ addTodo }: TodoFormProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="form-container w-full mb-10 border p-2 rounded-xl">
+      <div className="form-container w-full mb-10 border  border-neutral-400 p-2 rounded-xl">
         <form className="flex" onSubmit={handleSubmit}>
           <button
             type="submit"

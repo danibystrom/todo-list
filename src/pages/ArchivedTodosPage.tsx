@@ -9,7 +9,7 @@ function ArchivedTodos() {
 
   return (
     <div className="container">
-      <h1 className="text-xl">Archived stuff:</h1>
+      <h1 className="text-xl p-2">Archived stuff:</h1>
       {todos
         .filter((todo) => todo.isArchived)
         .map((todo, index) => (
@@ -20,11 +20,13 @@ function ArchivedTodos() {
           />
         ))}
 
-      <Link to="/">
-        <button className="mr-2 rounded-2xl px-4 py-1 mt-5 text-slate-950 bg-white border-slate-50 ">
-          back
-        </button>
-      </Link>
+      <div className="flex justify-end">
+        <Link to="/">
+          <button className="rounded-full px-5 py-2 mt-14 mb-5 mr-5 text-slate-950 bg-white border-slate-50">
+            back
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

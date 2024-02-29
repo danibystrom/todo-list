@@ -23,11 +23,13 @@ function HomePage() {
           />
         ))}
 
-      <Link to="/archived">
-        <button className="mr-2 rounded-2xl px-4 py-1 mt-5 text-slate-950 bg-white border-slate-50 ">
-          archived stuff
-        </button>
-      </Link>
+      <div className="flex justify-end">
+        <Link to="/archived">
+          <button className="rounded-full px-5 py-2 mt-14 mb-5 mr-5 text-slate-950 bg-white border-slate-50 ">
+            archived stuff
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
