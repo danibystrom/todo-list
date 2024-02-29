@@ -28,6 +28,15 @@ To run this project locally, follow these steps:
 - View active todos: Users can view and manage their active todos on the homepage.
 - View archived todos: Users can view their completed and archived todos on the archived todos page.
 
+## Requirements for grading
+
+[x] The project contains and utilizes at least 6 components, of which at least 2 are "Stateful" components.
+[x] React Router has been used to dynamically update the URL.
+[x] Git & GitHub have been used.
+[x] The project directory contains a README.md file.
+[x] The task is submitted on time.
+[x] Presentation of the project has been conducted.
+
 ## Technologies Used
 
 - React.js
