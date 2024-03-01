@@ -1,8 +1,8 @@
-interface DeleteButtonProps {
+interface ArchiveButtonProps {
   onDelete: () => void;
 }
 
-function DeleteButton({ onDelete }: DeleteButtonProps) {
+function ArchiveButton({ onDelete }: ArchiveButtonProps) {
   const handleClick = () => {
     onDelete();
   };
@@ -17,4 +17,4 @@ function DeleteButton({ onDelete }: DeleteButtonProps) {
   );
 }
 
-export default DeleteButton;
+export default ArchiveButton;

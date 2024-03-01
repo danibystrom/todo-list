@@ -2,8 +2,8 @@
 import { useState } from "react";
 import "../styles/Todo.css";
 import { Todo } from "../todos";
+import DeleteButton from "./ArchiveButton";
 import Checkbox from "./Checkbox";
-import DeleteButton from "./DeleteButton";
 
 interface TodoProps {
   todo: Todo;
