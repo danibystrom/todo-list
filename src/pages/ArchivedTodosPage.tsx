@@ -17,6 +17,7 @@ function ArchivedTodos() {
             key={index}
             todo={todo}
             onDelete={() => deleteTodo(todo.id)}
+            isArchived // Skicka med isArchived prop för att indikera att det är på arkivsidan
           />
         ))}
 

@@ -1,4 +1,6 @@
+// TodoComponent.tsx
 import { useState } from "react";
+import "../styles/Todo.css";
 import { Todo } from "../todos";
 import Checkbox from "./Checkbox";
 import DeleteButton from "./DeleteButton";
@@ -7,9 +9,10 @@ interface TodoProps {
   todo: Todo;
   onDelete: () => void;
   onArchive?: () => void; // Gör onArchive valfri
+  isArchived?: boolean; // Ny prop för att indikera om det är på arkivsidan
 }
 
-function TodoComponent({ todo, onArchive }: TodoProps) {
+function TodoComponent({ todo, onArchive, isArchived }: TodoProps) {
   const [done, setDone] = useState(todo.isDone);
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(todo.text);
@@ -38,13 +41,11 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
     }
   };
 
-  const toggleDone = () => {
-    setDone(!done);
-  };
-
   return (
-    <div className={`flex items-center todo ${done ? "done" : ""}`}>
-      <Checkbox checked={done} onClick={toggleDone} />
+    <div
+      className={`flex items-center todo ${done || isArchived ? "done" : ""}`}
+    >
+      <Checkbox checked={done} onClick={() => setDone(!done)} />
       {isEditing ? (
         <div className="ml-2 flex w-full">
           <input
@@ -71,7 +72,9 @@ function TodoComponent({ todo, onArchive }: TodoProps) {
       ) : (
         <>
           <span
-            className={`ml-2 todo-text text-lg ${done ? "done" : ""}`}
+            className={`ml-2 todo-text text-lg ${
+              done || isArchived ? "done" : ""
+            }`}
             onClick={handleEdit}
           >
             {todo.text}
