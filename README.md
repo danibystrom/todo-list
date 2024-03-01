@@ -1,4 +1,4 @@
-# Todo List App
+# Todo List App "todo tally"
 
 ## Description
 
@@ -44,9 +44,10 @@ To run this project locally, follow these steps:
 - React Router
 - Tailwind CSS
 
-## Link
+## Links
 
-https://todotally.vercel.app
+[GitHub](https://github.com/danibystrom/todo-list)
+[Demo](https://todotally.vercel.app)
 
 ## Credits
 
